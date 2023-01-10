@@ -71,22 +71,6 @@ int main()
         clock.restart(); //nunulina laikrodi
         timer += time; //prideda sekundes
 
-        Event e; //sukuriamas ivykis
-        while (window.pollEvent(e))
-        {
-            if (e.type == Event::Closed) //jeigu ivykis closed tada uzdarom langa
-                window.close();
-
-            if (e.type == Event::KeyPressed) //jeigu paspaustas mygtukas
-                if (e.key.code == Keyboard::Escape)
-                {
-                    for (int i = 1; i < P - 1; i++) //visus langelius iskyrus sonines sienas pazymim nuliu
-                        for (int j = 1; j < I - 1; j++)
-                            Langas[i][j] = 0;
-
-                    Game = true;
-                }
-        }
         if (Keyboard::isKeyPressed(Keyboard::Left)) { dx0 = -1; dy0 = 0; }; //gyvateles valdymas
         if (Keyboard::isKeyPressed(Keyboard::Right)) { dx0 = 1; dy0 = 0; };
         if (Keyboard::isKeyPressed(Keyboard::Up)) { dx0 = 0; dy0 = -1; };
